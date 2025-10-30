@@ -1,4 +1,8 @@
-import { ICredentialType, INodeProperties } from "n8n-workflow";
+import {
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from "n8n-workflow";
 
 export class DockerCredentials implements ICredentialType {
 	name = "dockerCredentialsApi";
@@ -104,4 +108,13 @@ export class DockerCredentials implements ICredentialType {
 			},
 		},
 	];
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: "={{$credentials.authType === 'socket' ? 'http://localhost' : ('http://' + $credentials.host + ':' + $credentials.port)}}",
+			url: "/version",
+			method: "GET",
+			skipSslCertificateValidation: "={{!$credentials.useTls}}",
+		},
+	};
 }

@@ -1,4 +1,8 @@
-import { ICredentialType, INodeProperties } from "n8n-workflow";
+import {
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from "n8n-workflow";
 
 export class KubernetesCredentials implements ICredentialType {
 	name = "kubernetesCredentialsApi";
@@ -52,4 +56,12 @@ export class KubernetesCredentials implements ICredentialType {
 			},
 		},
 	];
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: "={{$credentials.loadFrom === 'automatic' ? 'https://kubernetes.default.svc' : 'https://kubernetes-api'}}",
+			url: "/version",
+			method: "GET",
+		},
+	};
 }
