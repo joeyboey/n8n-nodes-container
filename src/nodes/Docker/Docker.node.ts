@@ -260,6 +260,20 @@ export class Docker implements INodeType {
                 description:
                     "Mount host directories or Docker volumes into the container",
             },
+            {
+                displayName: "Working Directory",
+                name: "workingDir",
+                type: "string",
+                default: "",
+                placeholder: "/app",
+                displayOptions: {
+                    show: {
+                        operation: ["run"],
+                    },
+                },
+                description:
+                    "Working directory inside the container. Commands will execute from this path.",
+            },
         ],
     };
     async execute(
@@ -311,10 +325,18 @@ export class Docker implements INodeType {
                     );
                 }
 
+                // Get working directory
+                const workingDir = this.getNodeParameter(
+                    "workingDir",
+                    idx,
+                    "",
+                ) as string;
+
                 await docker.pull(image);
 
                 data = await run(docker, image, command, {
                     Volumes: volumeConfig.Volumes,
+                    WorkingDir: workingDir || undefined,
                     HostConfig: {
                         AutoRemove: true,
                         Binds: volumeConfig.Binds,
