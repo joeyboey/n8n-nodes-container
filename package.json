@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-container",
-	"version": "0.1.9",
+	"version": "0.2.0",
 	"description": "n8n community nodes for Docker and Kubernetes container orchestration. Run containers, execute pods, and manage containerized workflows directly from n8n.",
 	"keywords": [
 		"n8n-community-node-package"
@@ -33,8 +33,8 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/nodes/Docker/DockerCredentials.credentials.js",
-			"dist/nodes/Docker/KubernetesCredentials.credentials.js"
+			"dist/credentials/DockerCredentialsApi.credentials.js",
+			"dist/credentials/KubernetesCredentialsApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/Docker/Docker.node.js",

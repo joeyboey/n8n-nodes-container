@@ -9,10 +9,7 @@ import {
 
 export class K8SClient {
 	kubeConfig: k8s.KubeConfig;
-	constructor(
-		credentials: ICredentialDataDecryptedObject,
-		private readonly func: IExecuteFunctions,
-	) {
+	constructor(credentials: ICredentialDataDecryptedObject, func: IExecuteFunctions) {
 		if (credentials === undefined) {
 			throw new NodeOperationError(func.getNode(), 'No credentials got returned!');
 		}

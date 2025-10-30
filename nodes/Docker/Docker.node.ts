@@ -341,7 +341,9 @@ export class Docker implements INodeType {
 				this.sendMessageToUI('credentials:' + JSON.stringify(credentials));
 				this.sendMessageToUI('action:' + JSON.stringify(action));
 
-				data = await docker[action](options);
+				// Dynamic method call - cast to any for flexibility
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				data = (await (docker as any)[action](options)) as IDataObject;
 			}
 
 			result.push(
