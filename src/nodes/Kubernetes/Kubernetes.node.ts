@@ -79,6 +79,7 @@ export class Kubernetes implements INodeType {
 				},
 			},
 		],
+		usableAsTool: true,
 	};
 	async execute(
 		this: IExecuteFunctions

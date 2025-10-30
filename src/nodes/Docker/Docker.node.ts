@@ -275,6 +275,7 @@ export class Docker implements INodeType {
                     "Working directory inside the container. Commands will execute from this path.",
             },
         ],
+		usableAsTool: true,
     };
     async execute(
         this: IExecuteFunctions,

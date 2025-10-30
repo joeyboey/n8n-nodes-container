@@ -21,7 +21,7 @@
         "prepare": "husky",
         "build": "swc src -d dist && ts-node ./scripts/copy.ts",
         "lint": "n8n-node lint",
-        "lint:fix": "eslint src --ext .ts --fix",
+        "lint:fix": "n8n-node lint --fix",
         "prepublishOnly": "yarn build",
         "release": "standard-version",
         "commit": "git-cz",

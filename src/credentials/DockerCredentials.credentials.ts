@@ -89,6 +89,7 @@ export class DockerCredentials implements ICredentialType {
 					useTls: [true],
 				},
 			},
+			typeOptions: { password: true },
 		},
 		{
 			displayName: "Key",
