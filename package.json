@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-container",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "n8n community nodes for Docker and Kubernetes container orchestration. Run containers, execute pods, and manage containerized workflows directly from n8n.",
 	"keywords": [
 		"n8n-community-node-package"
@@ -19,13 +19,12 @@
 	"scripts": {
 		"dev": "n8n-node dev",
 		"prepare": "husky",
-		"build": "swc src -d dist && ts-node ./scripts/copy.ts",
+		"build": "n8n-node build",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"prepublishOnly": "yarn build",
-		"release": "standard-version",
-		"commit": "git-cz",
-		"test": "jest --passWithNoTests"
+		"release": "n8n-node release",
+		"commit": "git-cz"
 	},
 	"files": [
 		"dist"
@@ -48,12 +47,8 @@
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.38.0",
 		"@n8n/node-cli": "^0.14.0",
-		"@swc/cli": "^0.7.8",
-		"@swc/core": "^1.14.0",
-		"@swc/jest": "^0.2.39",
 		"@types/dockerode": "^3.3.45",
 		"@types/glob": "^9.0.0",
-		"@types/jest": "^30.0.0",
 		"@types/request-promise-native": "^1.0.21",
 		"@typescript-eslint/eslint-plugin": "^8.46.2",
 		"@typescript-eslint/parser": "^8.46.2",
@@ -71,7 +66,6 @@
 		"glob": "^11.0.3",
 		"globals": "^16.4.0",
 		"husky": "^9.1.7",
-		"jest": "^30.2.0",
 		"n8n-core": "^1.0.1",
 		"n8n-workflow": "^1.0.1",
 		"prettier": "^3.6.2",
