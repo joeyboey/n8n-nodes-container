@@ -1,4 +1,4 @@
-# n8n-nodes-container
+# n8n-nodes-docker-container
 
 This is an n8n community node. It lets you use Docker in your n8n workflows.
 

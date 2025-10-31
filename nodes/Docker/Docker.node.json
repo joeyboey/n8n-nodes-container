@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-container.docker",
+	"node": "n8n-nodes-docker-container.docker",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Container"],

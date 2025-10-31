@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-container.kubernetes",
+	"node": "n8n-nodes-docker-container.kubernetes",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Container"],
