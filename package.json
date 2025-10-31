@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-docker-container",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "n8n community nodes for Docker and Kubernetes container orchestration. Run containers, execute pods, and manage containerized workflows directly from n8n.",
 	"keywords": [
 		"n8n-community-node-package"
